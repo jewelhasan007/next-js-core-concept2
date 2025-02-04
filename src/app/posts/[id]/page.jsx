@@ -13,10 +13,13 @@ const page = async ({params}) => {
     const {title, body} = await postData(params.id)
     console.log(title)
     return (
-        <div>
+        <div >
+            <div className='border-3 border-green-500'>
             <h1>Post Details for id</h1>
             <h6>{title}</h6>
             <p>{body}</p>
+            </div>
+           
         </div>
     );
 };
