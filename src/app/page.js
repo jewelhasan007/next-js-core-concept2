@@ -8,6 +8,9 @@ export default function Home() {
 <h1>
   Core Concept 2
 </h1>
+<h6>
+  check global css
+</h6>
     </div>
   );
 }

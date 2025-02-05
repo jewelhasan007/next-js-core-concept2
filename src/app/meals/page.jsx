@@ -1,5 +1,5 @@
 "use client"
-
+import styles from './styles.module.css'
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
@@ -33,7 +33,7 @@ const page = () => {
     },[]);
     return (
         <div className='mt-12'>
-            The meals page
+            <h3 className={ styles.font_tomato}>The meals page</h3>
 
             <div >
             <input onChange={handler} className='border-y-2 border-l-2 rounded-l-md p-1 border-gray-500' type="text" placeholder='Search Here...' />
