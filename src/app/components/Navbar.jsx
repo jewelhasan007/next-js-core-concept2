@@ -26,6 +26,7 @@ const navbar = () => {
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow mx-3">
         <Link href='/'><li className='mx-3'>Home</li></Link>
         <Link href='/posts'><li className='mx-3'>Post</li></Link>
+        <Link href='/meals'><li className='mx-3'>Meals</li></Link>
        
        
           
@@ -37,6 +38,7 @@ const navbar = () => {
     <ul className="menu menu-horizontal px-1 mx-3 ">
       <Link href='/'><li className='mx-3'>Home</li></Link>
       <Link href='/posts'><li className='mx-3'>Post</li></Link>
+      <Link href='/meals'><li className='mx-3'>Meals</li></Link>
       
     </ul>
   </div>
