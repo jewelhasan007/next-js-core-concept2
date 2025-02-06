@@ -1,5 +1,17 @@
 import React from 'react';
 
+    export const generateMetadata = async ({params}) =>{
+        const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
+        const postData = await res.json()
+        return {
+            title: {
+             absolute:   `${postData.title}`,
+            },
+            description: postData.body,
+            keywords: postData.body.split(' ')
+    }
+}
+
 const postData = async (id) =>{
    const postDetails = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
     const data = await postDetails.json()
