@@ -27,9 +27,10 @@ const navbar = () => {
         <Link href='/'><li className='mx-3'>Home</li></Link>
         <Link href='/posts'><li className='mx-3'>Post</li></Link>
         <Link href='/meals'><li className='mx-3'>Meals</li></Link>
+        <Link href='/fonts'><li className='mx-3'>Fonts</li></Link>
+        <Link href='/animals'><li className='mx-3'>Animals</li></Link>
+        <Link href='/current-time'><li className='mx-3'>Current Time</li></Link>
        
-       
-          
       </ul>
     </div>
     <a className="btn btn-ghost text-xl mx-5">Next Core 2</a>
@@ -39,7 +40,9 @@ const navbar = () => {
       <Link href='/'><li className='mx-3'>Home</li></Link>
       <Link href='/posts'><li className='mx-3'>Post</li></Link>
       <Link href='/meals'><li className='mx-3'>Meals</li></Link>
-      
+      <Link href='/fonts'><li className='mx-3'>Fonts</li></Link>
+      <Link href='/animals'><li className='mx-3'>Animals</li></Link>
+      <Link href='/current-time'><li className='mx-3'>Current Time</li></Link>
     </ul>
   </div>
   <div className="navbar-end">
