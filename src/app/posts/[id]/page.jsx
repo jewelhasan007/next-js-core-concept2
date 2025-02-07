@@ -1,3 +1,4 @@
+import { redirect } from 'next/navigation';
 import React from 'react';
 
     export const generateMetadata = async ({params}) =>{
@@ -16,6 +17,7 @@ const postData = async (id) =>{
    const postDetails = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
     const data = await postDetails.json()
     console.log(data)
+    
     return data
 }
 

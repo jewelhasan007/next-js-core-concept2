@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 import React from 'react';
 
 export const metadata = {
@@ -9,6 +10,9 @@ export const metadata = {
 const page = async () => {
 const  data = await fetch('https://jsonplaceholder.typicode.com/posts')
 const posts = await data.json()
+// if(data){
+//     redirect(`/posts/${posts[1].id}`) //redirect the posts page to details page
+// }
     return (
         <div >
        <h1 className='text-red-300 underline'>All Posts:</h1>

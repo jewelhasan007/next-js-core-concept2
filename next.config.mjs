@@ -9,6 +9,21 @@ const nextConfig = {
         ],
       },
 
+      redirects : async () => {
+        return [
+          {
+              source: '/fonts',
+              destination: '/posts',
+              permanent: true,
+          },
+          {
+            source: '/meals',
+            destination: '/current-time',
+            permanent: true,
+          }
+        ]
+      }
+
 };
 
 export default nextConfig;
