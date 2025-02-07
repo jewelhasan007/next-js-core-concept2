@@ -33,7 +33,7 @@ const navbar = () => {
        
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl mx-5">Next Core 2</a>
+    <a className="btn btn-ghost text-xl mx-5">Next Core 2 Buld Mode</a>
   </div>
   <div className="navbar-center hidden lg:flex  ">
     <ul className="menu menu-horizontal px-1 mx-3 ">

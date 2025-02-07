@@ -38,4 +38,13 @@ const page = async ({params}) => {
     );
 };
 
+// this is error resolved during export the project >> npm run export
+
+export async function generateStaticParams() {
+    const posts = await fetch('https://jsonplaceholder.typicode.com/posts').then((res) => res.json())
+   
+    return posts.map((post) => ({
+      id: post.id.toString(),
+    }))
+  }
 export default page;
