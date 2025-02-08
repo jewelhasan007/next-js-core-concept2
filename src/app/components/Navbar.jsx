@@ -46,7 +46,7 @@ const navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-      <a href="">Login</a>
+      <a href="/api/auth/signin">Login</a>
   </div>
 </div>
         </div>
