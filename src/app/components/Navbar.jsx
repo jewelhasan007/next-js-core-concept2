@@ -1,7 +1,12 @@
+"use client"
+import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 const navbar = () => {
+  const session = useSession();
+  console.log(session)
     return (
         <div>
             <div className="navbar bg-red-100 mx-3 ">
@@ -45,9 +50,20 @@ const navbar = () => {
       <Link href='/current-time'><li className='mx-3'>Current Time</li></Link>
     </ul>
   </div>
-  <div className="navbar-end">
-      <a href="/api/auth/signin">Login</a>
+
+  <div className=' flex justify-around navbar-start text-blue-500'>
+    <div>  <Image src={session?.data?.user?.image} alt={session?.data?.user?.name} width={50} height={50}></Image> </div>
+    <div>  {session?.data?.user?.name}</div>
+    <div> {session?.data?.user?.type}</div>
   </div>
+  <div >
+    { session.status === "unauthenticated" ? 
+      <a href="/api/auth/signin">Login</a>
+      : 
+      <a href="/">LogOut</a>
+    }
+  </div>
+ 
 </div>
         </div>
     );

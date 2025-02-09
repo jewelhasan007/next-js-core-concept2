@@ -1,11 +1,11 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials"
 
-
-const handler = NextAuth(
-{
+export const authInfo = {
+    secret : process.env.NEXT_PUBLIC_API_SECRET,
     session : {
-        strategy : "jwt"
+        strategy : "jwt",
+        maxAge: 30 * 24 * 60 * 60,
     },
     providers : [
 CredentialsProvider({
@@ -23,37 +23,56 @@ CredentialsProvider({
         const currentUser = users.find((user)=> user.email === email)
         if(currentUser){
             if(currentUser.password === password){
-                return currentUser
+                return currentUser;
             }
         }
       }
-      return currentUser;
+      return null;
     }
 }),
     ],
+    callbacks : {
+        async jwt({ token, account, user }) {
+            // Persist the OAuth access_token and or the user id to the token right after signin
+            if (account) {
+              token.type = user.type
+            }
+            return token;
+          },
+          async session({ session, token }) {
+            session.user.type = token.type
+            return session;
+          }
+        }
 
 }
 
-)
+const handler = NextAuth( authInfo)
 
 const users = [
     {
         id : 1,
         name : "Asad",
         email : "asad@gmail.com",
-        password : "password"
+        type : "admin",
+        password : "password",
+        image : "https://picsum.photos/200/300"
     },
     {
         id : 2,
         name : "Bokul",
         email : "bokul@gmail.com",
-        password : "password"
+        type : "moderator",
+        password : "password",
+         image : "https://picsum.photos/200/300"
     },
     {
         id : 3,
         name : "Karim",
         email : "karim@gmail.com",
-        password : "password"
+        type : "user",
+        password : "password",
+        image : "https://picsum.photos/200/300"
     }
 ]
 

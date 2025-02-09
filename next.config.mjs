@@ -6,7 +6,15 @@ const nextConfig = {
           {
             protocol: "https",
             hostname: "www.themealdb.com",
+            port: "",
+            pathname: "/**",
           },
+          {
+            protocol: "https",
+            hostname: "picsum.photos",
+            port: "",
+            pathname: "/**",
+          }
         ],
       },
 
@@ -17,11 +25,7 @@ const nextConfig = {
               destination: '/posts',
               permanent: true,
           },
-          {
-            source: '/meals',
-            destination: '/current-time',
-            permanent: true,
-          }
+         
         ]
       }
 
