@@ -35,6 +35,7 @@ const navbar = () => {
         <Link href='/fonts'><li className='mx-3'>Fonts</li></Link>
         <Link href='/animals'><li className='mx-3'>Animals</li></Link>
         <Link href='/current-time'><li className='mx-3'>Current Time</li></Link>
+        <Link href='/current-time'><li className='mx-3'>Current Time</li></Link>
        
       </ul>
     </div>
@@ -47,6 +48,7 @@ const navbar = () => {
       <Link href='/meals'><li className='mx-3'>Meals</li></Link>
       <Link href='/fonts'><li className='mx-3'>Fonts</li></Link>
       <Link href='/animals'><li className='mx-3'>Animals</li></Link>
+      <Link href='/current-time'><li className='mx-3'>Current Time</li></Link>
       <Link href='/current-time'><li className='mx-3'>Current Time</li></Link>
     </ul>
   </div>
