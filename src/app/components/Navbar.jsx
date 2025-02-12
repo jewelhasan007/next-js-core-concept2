@@ -1,12 +1,12 @@
 "use client"
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 const navbar = () => {
   const session = useSession();
-  console.log(session)
+   console.log(session)
     return (
         <div>
             <div className="navbar bg-red-100 mx-3 ">
@@ -35,7 +35,7 @@ const navbar = () => {
         <Link href='/fonts'><li className='mx-3'>Fonts</li></Link>
         <Link href='/animals'><li className='mx-3'>Animals</li></Link>
         <Link href='/current-time'><li className='mx-3'>Current Time</li></Link>
-        <Link href='/current-time'><li className='mx-3'>Current Time</li></Link>
+        <Link href='/dashboard'><li className='mx-3'>dashboard</li></Link>
        
       </ul>
     </div>
@@ -49,12 +49,12 @@ const navbar = () => {
       <Link href='/fonts'><li className='mx-3'>Fonts</li></Link>
       <Link href='/animals'><li className='mx-3'>Animals</li></Link>
       <Link href='/current-time'><li className='mx-3'>Current Time</li></Link>
-      <Link href='/current-time'><li className='mx-3'>Current Time</li></Link>
+      <Link href='/dashboard'><li className='mx-3'>dashboard</li></Link>
     </ul>
   </div>
 
   <div className=' flex justify-around navbar-start text-blue-500'>
-    <div>  <Image src={session?.data?.user?.image} alt={session?.data?.user?.name} width={50} height={50}></Image> </div>
+    {/* <div>  <Image src={session?.data?.user?.image} alt={session?.data?.user?.name} width={50} height={50}></Image> </div> */}
     <div>  {session?.data?.user?.name}</div>
     <div> {session?.data?.user?.type}</div>
   </div>
@@ -62,7 +62,8 @@ const navbar = () => {
     { session.status === "unauthenticated" ? 
       <a href="/api/auth/signin">Login</a>
       : 
-      <a href="/">LogOut</a>
+     
+      <button onClick={()=> signOut()}>SignOut</button>
     }
   </div>
  

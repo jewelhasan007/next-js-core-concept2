@@ -13,7 +13,7 @@ export const metadata = {
 
 const page = async () => {
     const session = await getServerSession(authInfo)
-    console.log({session})
+    // console.log({session})
     return (
      <div>
 <MealsPage></MealsPage>
