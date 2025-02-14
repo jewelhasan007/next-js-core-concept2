@@ -1,6 +1,7 @@
 
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials"
+import GoogleProvider from "next-auth/providers/google";
 
 
 
@@ -47,7 +48,16 @@ CredentialsProvider({
             return session;
           }
         },
+<<<<<<< HEAD
 
+=======
+        providers: [
+            GoogleProvider({
+              clientId: process.env.GOOGLE_CLIENT_ID,
+              clientSecret: process.env.GOOGLE_CLIENT_SECRET
+            })
+          ]
+>>>>>>> ddbf7c329b265031d59beec9a479201d9cd2bbb4
 
 }
 
