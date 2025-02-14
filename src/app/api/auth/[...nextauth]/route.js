@@ -1,5 +1,8 @@
+
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials"
+
+
 
 export const authInfo = {
     secret : process.env.NEXT_PUBLIC_API_SECRET,
@@ -43,7 +46,8 @@ CredentialsProvider({
             session.user.type = token.type
             return session;
           }
-        }
+        },
+
 
 }
 

@@ -9,7 +9,7 @@ const page = () => {
             {
                 [1, 2, 3, 4, 5].map((img)=>(
                     
-                    <Image key={img} src={`/images/${img}.jpg`} width={250} height={250} alt='img'></Image>
+                    <Image key={img} src={`/images/${img}.jpg`} width={250} height={250} alt={img}></Image>
                 ))
             }
            </div>

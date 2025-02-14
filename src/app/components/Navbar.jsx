@@ -1,5 +1,5 @@
 "use client"
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -35,7 +35,7 @@ const navbar = () => {
         <Link href='/fonts'><li className='mx-3'>Fonts</li></Link>
         <Link href='/animals'><li className='mx-3'>Animals</li></Link>
         <Link href='/current-time'><li className='mx-3'>Current Time</li></Link>
-        <Link href='/current-time'><li className='mx-3'>Current Time</li></Link>
+        <Link href='/dashboard'><li className='mx-3'>Dashboard</li></Link>
        
       </ul>
     </div>
@@ -49,7 +49,8 @@ const navbar = () => {
       <Link href='/fonts'><li className='mx-3'>Fonts</li></Link>
       <Link href='/animals'><li className='mx-3'>Animals</li></Link>
       <Link href='/current-time'><li className='mx-3'>Current Time</li></Link>
-      <Link href='/current-time'><li className='mx-3'>Current Time</li></Link>
+      <Link href='/dashboard'><li className='mx-3'>Dashboard</li></Link>
+     
     </ul>
   </div>
 
@@ -60,12 +61,15 @@ const navbar = () => {
   </div>
   <div >
     { session.status === "unauthenticated" ? 
-      <a href="/api/auth/signin">Login</a>
+     <Link href='/api/auth/signin'><button className='btn btn-ghost'>SignIn</button></Link>
       : 
-      <a href="/">LogOut</a>
+     <button onClick={()=> signOut()} className='btn btn-ghost' >LogOut</button>
     }
   </div>
- 
+  <div>
+  <Link href='/api/auth/signup'><button className='btn btn-ghost'>SignUp</button></Link>
+  </div>
+
 </div>
         </div>
     );
