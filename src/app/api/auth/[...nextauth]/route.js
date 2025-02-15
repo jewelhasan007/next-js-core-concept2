@@ -1,7 +1,8 @@
 
+import connectDB from "@/lib/connectDB";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials"
-import GoogleProvider from "next-auth/providers/google";
+
 
 
 
@@ -20,16 +21,22 @@ CredentialsProvider({
     },
     async authorize(credentials) {
         const {email, password} = credentials;
+        console.log('the credential found',credentials)
         if(!credentials){
             return null;
         }
       if(email){
-        const currentUser = users.find((user)=> user.email === email)
-        if(currentUser){
-            if(currentUser.password === password){
-                return currentUser;
-            }
-        }
+         const db = await connectDB();
+         const currentUser = await db.collection('users').findOne({email});
+         console.log('current user from mogoDB collection',currentUser)
+        //  const currentUser = users.find((user)=> user.email === email)
+         console.log('current user found after find',currentUser)
+         if(currentUser){
+              if(currentUser.password === password){
+                  return currentUser;
+              }
+            //  return currentUser
+         }
       }
       return null;
     }
@@ -48,22 +55,14 @@ CredentialsProvider({
             return session;
           }
         },
-<<<<<<< HEAD
 
-=======
-        providers: [
-            GoogleProvider({
-              clientId: process.env.GOOGLE_CLIENT_ID,
-              clientSecret: process.env.GOOGLE_CLIENT_SECRET
-            })
-          ]
->>>>>>> ddbf7c329b265031d59beec9a479201d9cd2bbb4
+
 
 }
 
 const handler = NextAuth( authInfo)
 
-const users = [
+ const users = [
     {
         id : 1,
         name : "Asad",
@@ -88,6 +87,6 @@ const users = [
         password : "password",
         image : "https://picsum.photos/200/300"
     }
-]
+ ]
 
 export {handler as GET, handler as POST}

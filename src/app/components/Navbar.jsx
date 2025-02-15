@@ -35,11 +35,11 @@ const navbar = () => {
         <Link href='/fonts'><li className='mx-3'>Fonts</li></Link>
         <Link href='/animals'><li className='mx-3'>Animals</li></Link>
         <Link href='/current-time'><li className='mx-3'>Current Time</li></Link>
-<<<<<<< HEAD
+
         <Link href='/dashboard'><li className='mx-3'>Dashboard</li></Link>
-=======
+
         <Link href='/dashboard'><li className='mx-3'>dashboard</li></Link>
->>>>>>> ddbf7c329b265031d59beec9a479201d9cd2bbb4
+
        
       </ul>
     </div>
@@ -53,12 +53,11 @@ const navbar = () => {
       <Link href='/fonts'><li className='mx-3'>Fonts</li></Link>
       <Link href='/animals'><li className='mx-3'>Animals</li></Link>
       <Link href='/current-time'><li className='mx-3'>Current Time</li></Link>
-<<<<<<< HEAD
       <Link href='/dashboard'><li className='mx-3'>Dashboard</li></Link>
      
-=======
+
       <Link href='/dashboard'><li className='mx-3'>dashboard</li></Link>
->>>>>>> ddbf7c329b265031d59beec9a479201d9cd2bbb4
+
     </ul>
   </div>
 
@@ -71,12 +70,7 @@ const navbar = () => {
     { session.status === "unauthenticated" ? 
      <Link href='/api/auth/signin'><button className='btn btn-ghost'>SignIn</button></Link>
       : 
-<<<<<<< HEAD
-     <button onClick={()=> signOut()} className='btn btn-ghost' >LogOut</button>
-=======
-     
-      <button onClick={()=> signOut()}>SignOut</button>
->>>>>>> ddbf7c329b265031d59beec9a479201d9cd2bbb4
+    <button onClick={()=> signOut()} className='btn btn-ghost' >LogOut</button>
     }
   </div>
   <div>
