@@ -2,9 +2,8 @@
 import connectDB from "@/lib/connectDB";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials"
-
-
-
+import GoogleProvider from "next-auth/providers/google";
+import FacebookProvider from "next-auth/providers/facebook";
 
 export const authInfo = {
     secret : process.env.NEXT_PUBLIC_API_SECRET,
@@ -19,6 +18,7 @@ CredentialsProvider({
         password : { label : "Password", type : "password", required : true, placeholder : "Password",},
        
     },
+  
     async authorize(credentials) {
         const {email, password} = credentials;
         console.log('the credential found',credentials)
@@ -41,7 +41,17 @@ CredentialsProvider({
       return null;
     }
 }),
+// google provider
+GoogleProvider({
+    clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+    clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET
+  }),
+  FacebookProvider({
+    clientId: process.env.FACEBOOK_CLIENT_ID,
+    clientSecret: process.env.FACEBOOK_CLIENT_SECRET
+  })
     ],
+
     callbacks : {
         async jwt({ token, account, user }) {
             // Persist the OAuth access_token and or the user id to the token right after signin

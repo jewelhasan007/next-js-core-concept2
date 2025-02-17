@@ -36,7 +36,7 @@ const page = () => {
             type='text'
             name='name'
             placeholder='Your Full Name'
-            className='outline-none border-transparent p-3 text-slate-700'
+            className='outline rounded-sm outline-purple-300 border-transparent p-3 text-slate-700'
             >
             </input> <br /> <br />
                 <label htmlFor="email"> Email</label> <br />
@@ -44,7 +44,7 @@ const page = () => {
             type='text'
             name='email'
             placeholder='Email'
-            className='outline-none border-transparent p-3 text-slate-700'
+            className='outline rounded-sm outline-purple-300 border-transparent p-3 text-slate-700'
             >
             </input> <br /> <br />
                 <label htmlFor="image"> Image</label> <br />
@@ -52,7 +52,7 @@ const page = () => {
             type='text'
             name='image'
             placeholder='Image'
-            className='outline-none border-transparent p-3 text-slate-700'
+            className='outline rounded-sm outline-purple-300 border-transparent p-3 text-slate-700'
             >
             </input> <br /> <br />
                 <label htmlFor="type"> Type</label> <br />
@@ -60,7 +60,7 @@ const page = () => {
             type='text'
             name='type'
             placeholder='User Type'
-            className='outline-none border-transparent p-3 text-slate-700'
+            className='outline rounded-sm outline-purple-300 border-transparent p-3 text-slate-700'
             >
                 <option value="admin">Admin</option>
                 <option value="moderator">Moderator</option>
@@ -71,16 +71,15 @@ const page = () => {
             type='password'
             name='password'
             placeholder='your password'
-            className='outline-none border-transparent p-3 text-slate-700'
+            className='outline rounded-sm outline-purple-300 border-transparent p-3 text-slate-700'
             >
             </input> <br />
-            <button className='bg-orange-500 p-3'>Register</button>
+            <button className='bg-orange-500 p-3 m-3'>Register</button>
 
             </form>
          </div>
             </div>
 
-            
         </div>
     );
 };
